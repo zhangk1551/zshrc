@@ -2,6 +2,10 @@ bindkey -e
 
 unsetopt beep
 
+
+autoload -U select-word-style
+select-word-style bash
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
