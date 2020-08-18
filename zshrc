@@ -38,3 +38,7 @@ autoload  -U colors && colors
 autoload -U promptinit
 promptinit
 PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
+
+alias g=git
+alias gp="git push origin -u master"
+gc () {command git add *; git commit -m ""$@""}
