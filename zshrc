@@ -2,7 +2,6 @@ bindkey -e
 
 unsetopt beep
 
-
 autoload -U select-word-style
 select-word-style bash
 
@@ -21,6 +20,13 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 setopt completealiases
+
+function expand-alias() {
+  zle _expand_alias
+  zle self-insert
+}
+zle -N expand-alias
+bindkey -M main ' ' expand-alias
 
 source /usr/share/zsh/share/antigen.zsh
 antigen bundle zsh-users/zsh-autosuggestions
@@ -42,3 +48,8 @@ PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 alias g=git
 alias gp="git push origin -u master"
 gc () {command git add *; git commit -m ""$@""}
+
+alias s=systemctl
+alias sls="systemctl list-units --type service"
+
+alias p=pacman
