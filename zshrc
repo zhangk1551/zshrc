@@ -46,16 +46,23 @@ promptinit
 PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 
 alias g=git
+alias gca="git commit --amend"
 alias gd="git diff"
 alias gp="git push origin -u master"
+alias gs="git status"
 gc () {command git add *; git commit -m ""$@""}
+
+mc () {command mkdir -p "$@"; cd "$@"}
 
 alias s=systemctl
 alias sls="systemctl list-units --type service"
 
 alias p="sudo pacman -S"
 alias pls="sudo pacman -Qqe"
+alias pu="sudo pacman -Sy"
 
 alias dulist="du -h --max-depth=1 | sort -h"
 
 alias px=proxychains
+
+alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i 'state\|percentage'"
