@@ -34,6 +34,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-completions
 antigen bundle paulirish/git-open
+antigen bundle zhangk1551/vim-from-git-repo
 antigen apply
 
 bindkey -M emacs '^P' history-substring-search-up
@@ -52,7 +53,7 @@ alias gp="git push origin -u master"
 alias gs="git status"
 gc () {command git add *; git commit -m ""$@""}
 
-mc () {command mkdir -p "$@"; cd "$@"}
+mc () {mkdir -p "$@"; cd "$@"}
 
 alias s=systemctl
 alias sls="systemctl list-units --type service"
