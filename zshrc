@@ -62,7 +62,7 @@ alias p="sudo pacman -S"
 alias pls="sudo pacman -Qqe"
 alias pu="sudo pacman -Sy"
 
-alias dulist="du -h --max-depth=1 | sort -h"
+alias duls="du -h --max-depth=1 | sort -h"
 
 alias px=proxychains
 
