@@ -9,8 +9,8 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt BANG_HIST
-setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS 
 
 DIRSTACKSIZE=20
 setopt autopushd 
@@ -46,6 +46,10 @@ autoload -U promptinit
 promptinit
 PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 
+stty -ixon
+
+alias c=chromium
+
 alias g=git
 alias gca="git commit --amend"
 alias gd="git diff"
@@ -61,6 +65,8 @@ alias sls="systemctl list-units --type service"
 alias p="sudo pacman -S"
 alias pls="sudo pacman -Qqe"
 alias pu="sudo pacman -Sy"
+
+alias ap="ALL_PROXY=socks://127.0.0.1:1080"
 
 alias duls="du -h --max-depth=1 | sort -h"
 
