@@ -10,7 +10,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt BANG_HIST
 setopt SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS 
+setopt HIST_IGNORE_ALL_DUPS
 
 DIRSTACKSIZE=20
 setopt autopushd 
@@ -64,20 +64,18 @@ mc () {mkdir -p "$@"; cd "$@"}
 alias s=systemctl
 alias sls="systemctl list-units --type service"
 
-alias sz="source ~/.zshrc"
-
 alias p="sudo pacman -S"
 alias pls="sudo pacman -Qqe"
 alias pu="sudo pacman -Sy"
 
 alias y="yay -S"
 
-alias dc="docker-compose"
-
 alias duls="du -h --max-depth=1 | sort -h"
 
 alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i 'state\|percentage'"
 
 alias xx="xmodmap /etc/X11/xinit/.Xmodmap"
+alias sz="source ~/.zshrc"
 
 alias ap="ALL_PROXY=socks://127.0.0.1:1080"
+alias hp="--help"
