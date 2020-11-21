@@ -48,7 +48,9 @@ PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 
 stty -ixon
 
-alias c=chromium
+alias c="chromium &"
+
+alias hh="history -n > /dev/null"
 
 alias g=git
 alias gca="git commit --amend"
@@ -62,14 +64,20 @@ mc () {mkdir -p "$@"; cd "$@"}
 alias s=systemctl
 alias sls="systemctl list-units --type service"
 
+alias sz="source ~/.zshrc"
+
 alias p="sudo pacman -S"
 alias pls="sudo pacman -Qqe"
 alias pu="sudo pacman -Sy"
 
-alias ap="ALL_PROXY=socks://127.0.0.1:1080"
+alias y="yay -S"
+
+alias dc="docker-compose"
 
 alias duls="du -h --max-depth=1 | sort -h"
 
-alias px=proxychains
-
 alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i 'state\|percentage'"
+
+alias xx="xmodmap /etc/X11/xinit/.Xmodmap"
+
+alias ap="ALL_PROXY=socks://127.0.0.1:1080"
