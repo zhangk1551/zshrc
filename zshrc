@@ -34,8 +34,10 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-completions
 antigen bundle paulirish/git-open
-antigen bundle zhangk1551/vim-from-git-repo
+antigen bundle skywind3000/z.lua
 antigen apply
+
+eval "$(lua /home/host/.antigen/bundles/skywind3000/z.lua/z.lua --init zsh)"
 
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
@@ -48,9 +50,11 @@ PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 
 stty -ixon
 
-alias c="chromium &"
+alias c="chromium  > /dev/null 2>&1 &"
 
 alias hh="history -n > /dev/null"
+
+alias hp="--help"
 
 alias g=git
 alias gca="git commit --amend"
@@ -60,6 +64,7 @@ alias gs="git status"
 gc () {command git add *; git commit -m ""$@""}
 
 mc () {mkdir -p "$@"; cd "$@"}
+alias mp="mousepad"
 
 alias s=systemctl
 alias sls="systemctl list-units --type service"
@@ -78,4 +83,8 @@ alias xx="xmodmap /etc/X11/xinit/.Xmodmap"
 alias sz="source ~/.zshrc"
 
 alias ap="ALL_PROXY=socks://127.0.0.1:1080"
-alias hp="--help"
+
+export PATH=$PATH:/home/host/bin
+
+autoload bashcompinit
+bashcompinit
