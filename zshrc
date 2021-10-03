@@ -50,7 +50,7 @@ PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 
 stty -ixon
 
-alias c="google-chrome-stable > /dev/null 2>&1 &"
+alias c="chromium > /dev/null 2>&1 &"
 
 alias hh="history -n > /dev/null"
 
