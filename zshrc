@@ -13,7 +13,7 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
 DIRSTACKSIZE=20
-setopt autopushd 
+setopt autopushd
 setopt pushdignoredups
 
 autoload -U compinit
@@ -57,6 +57,7 @@ alias hh="history -n > /dev/null"
 alias hp="--help"
 
 alias g=git
+alias gb="git branch"
 alias gca="git commit --amend"
 alias gcl="git clone"
 alias gd="git diff"
@@ -71,7 +72,7 @@ alias sls="systemctl list-units --type service"
 
 alias p="sudo pacman -S"
 alias pls="sudo pacman -Qqe"
-alias pu="sudo pacman -Sy"
+alias pu="sudo pacman -Syu"
 
 alias y="yay -S"
 
