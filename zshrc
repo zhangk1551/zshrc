@@ -50,7 +50,7 @@ PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 
 stty -ixon
 
-alias c="chromium  > /dev/null 2>&1 &"
+alias c="google-chrome-stable > /dev/null 2>&1 &"
 
 alias hh="history -n > /dev/null"
 
@@ -58,13 +58,13 @@ alias hp="--help"
 
 alias g=git
 alias gca="git commit --amend"
+alias gcl="git clone"
 alias gd="git diff"
 alias gp="git push origin -u master"
 alias gs="git status"
 gc () {command git add *; git commit -m ""$@""}
 
 mc () {mkdir -p "$@"; cd "$@"}
-alias mp="mousepad"
 
 alias s=systemctl
 alias sls="systemctl list-units --type service"
@@ -81,6 +81,8 @@ alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i 
 
 alias xx="xmodmap /etc/X11/xinit/.Xmodmap"
 alias sz="source ~/.zshrc"
+
+alias st="exec startxfce4"
 
 alias ap="ALL_PROXY=socks://127.0.0.1:1080"
 
