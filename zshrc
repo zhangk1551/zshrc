@@ -37,7 +37,7 @@ antigen bundle paulirish/git-open
 antigen bundle skywind3000/z.lua
 antigen apply
 
-eval "$(lua /home/host/.antigen/bundles/skywind3000/z.lua/z.lua --init zsh)"
+eval "$(lua /home/kezhang/.antigen/bundles/skywind3000/z.lua/z.lua --init zsh)"
 
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
@@ -50,7 +50,7 @@ PROMPT="%{$fg[cyan]%}%n %{$reset_color%}%{$fg[magenta]%}%1d%{$reset_color%}> "
 
 stty -ixon
 
-alias c="chromium > /dev/null 2>&1 &"
+alias c="google-chrome > /dev/null 2>&1 &"
 
 alias hh="history -n > /dev/null"
 
@@ -76,6 +76,11 @@ alias pu="sudo pacman -Syu"
 
 alias y="yay -S"
 
+alias t=tmux
+alias ta="tmux a -t"
+alias tls="tmux ls"
+alias td="tmux detach"
+
 alias duls="du -h --max-depth=1 | sort -h"
 
 alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i 'state\|percentage'"
@@ -87,7 +92,7 @@ alias st="exec startxfce4"
 
 alias ap="ALL_PROXY=socks://127.0.0.1:1080"
 
-export PATH=$PATH:/home/host/bin
-
 autoload bashcompinit
 bashcompinit
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/kezhang/.mujoco/mujoco210/bin:/usr/lib/nvidia
